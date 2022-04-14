@@ -1,0 +1,15 @@
+# Generated output
+dist
+
+# dotenv environment variable files
+.env
+.env.test
+
+# Dependency directories
+node_modules
+
+# Logs
+logs
+
+# Temporary directory
+tmp

@@ -1,0 +1,2 @@
+# Scalar that defines a datetime string in ISO format
+scalar ISODateTime

@@ -1,0 +1,17 @@
+scalar NotificationPayload
+
+type Notification {
+  id: ID
+  payload: NotificationPayload
+  notificationType: NotificationType
+  subscriptionID: ID
+  createdOn: ISODateTime
+  expiresOn: ISODateTime
+
+  subscription: Subscription
+}
+enum NotificationType {
+  PULL
+  PUSH
+  EMAIL
+}

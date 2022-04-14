@@ -1,0 +1,22 @@
+type Query {
+  # Notifications
+  notifications: [Notification]
+  notification(id: ID!): Notification
+
+  # Subscriptions
+  subscriptions: [Subscription]
+  subscription(id: ID!): Subscription
+
+  # SubscriberMap
+  subscriberMaps: [SubscriberMap]
+  subscriberMap(id: ID, userID: ID, subscriptionID: ID): SubscriberMap
+
+  # Users
+  users: [User]
+  user(id: ID!): User
+}
+
+type Mutation {
+  # Users
+  createUser(user: CreateUserInput!): User
+}

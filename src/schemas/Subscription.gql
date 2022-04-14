@@ -1,0 +1,17 @@
+type Subscription {
+  id: ID
+  content: String                         # The content in question (id of the post/comment/etc)
+  contentType: SubscriptionContentType    # Can be a String for customizability
+  action: SubscriptionAction              # Can be a String for customizability
+  actor: ID                               # ID of the User
+}
+enum SubscriptionContentType {
+  POST
+  COMMENT
+  USER
+}
+enum SubscriptionAction {
+  NEW
+  UPDATE
+  DELETE
+}

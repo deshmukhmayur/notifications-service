@@ -1,0 +1,13 @@
+type User {
+  id: ID
+  firstName: String
+  lastName: String
+  readNotificationIDs: [ID]
+
+  readNotifications: [Notification]
+}
+
+input CreateUserInput {
+  firstName: String!
+  lastName: String!
+}

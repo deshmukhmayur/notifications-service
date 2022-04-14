@@ -1,0 +1,47 @@
+scalar NotificationPayload                # generic object for notification data
+scalar ISODate                            # eg. 2021-09-02T18:57:38.129Z
+
+type Notification {
+  id: ID
+  payload: NotificationPayload
+  notificationType: NotificationType
+  subscriptionID: ID
+  createdOn: ISODate
+  expiresOn: ISODate
+}
+enum NotificationType {
+  PULL
+  PUSH
+  EMAIL
+}
+
+type Subscription {
+  id: ID
+  content: String                         # The content in question (id of the post/comment/etc)
+  contentType: SubscriptionContentType    # Can be a String for customizability
+  action: SubscriptionAction              # Can be a String for customizability
+  actor: ID                               # ID of the User
+}
+enum SubscriptionContentType {
+  POST
+  COMMENT
+}
+enum SubscriptionAction {
+  NEW
+  UPDATE
+  DELETE
+}
+
+type SubscriberMap {
+  id: ID
+  userID: ID
+  subscriptionID: ID
+
+  enabled: Boolean                        # Need to brainstorm
+  frequency: String                       # Need to brainstorm
+}
+
+type User {
+  id: ID
+  readNotificationIDs: [ID]
+}

@@ -1,0 +1,11 @@
+type SubscriberMap {
+  id: ID
+  userID: ID
+  subscriptionID: ID
+
+  enabled: Boolean                        # Need to brainstorm
+  fraquency: String                       # Need to brainstorm
+
+  user: User
+  subscription: Subscription
+}
